@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="con">
+    <h1>Hidden Text</h1>
+    <div class="div">
+      <div class="container1">
+        <div>
+        <label for="input">Enter a text:</label>
+      </div>
+        <input type="text" id="input">
+        <button onclick="encryptText()">Encrypt</button>
+      </div>
+      <div class="container2">
+        <label for="encrypted">Enter the encrypted code:</label>
+        <textarea id="encrypted" placeholder="Enter encrypted code"></textarea>
+        <button onclick="decryptText()">Decrypt</button>
+        <button onclick="copyToClipboard()">Copy</button>
+      </div>
+      </div>
+    </div>
+    <div class="container3">
+      <h3>Decrypted Text:</h3>
+      <p id="output"></p>
+  </div>
+  <script>
+    function encryptText() {
+      var input = document.getElementById("input").value;
+      var encrypted = "";
+      for (var i = 0; i < input.length; i++) {
+        encrypted += input.charCodeAt(i) + " ";
+      }
+      document.getElementById("output").textContent = encrypted.trim();
+    }
+
+    function decryptText() {
+      var encrypted = document.getElementById("encrypted").value.trim();
+      var decrypted = "";
+      var chars = encrypted.split(" ");
+      for (var i = 0; i < chars.length; i++) {
+        decrypted += String.fromCharCode(parseInt(chars[i]));
+      }
+      document.getElementById("output").textContent = decrypted;
+    }
+
+    function copyToClipboard() {
+      var output = document.getElementById("output");
+      var range = document.createRange();
+      range.selectNode(output);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+  
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/all.min.js"></script>
+</body>
+</html>
