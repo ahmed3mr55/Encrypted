@@ -28,27 +28,6 @@ h1 {
     color: #fff;
 }
 
-input {
-    border: none;
-    outline: none;
-    color: #fff;
-    padding: 10px;
-    background: none;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    width: 200px;
-    margin-top: 5px;
-    margin: 5px;
-    min-height: 30px;
-}
-
-input:hover {
-    border: 1px solid #0f935a;
-}
-input:focus {
-    border: 1px solid #0f8193;
-}
-
 label {
     color: #fff;
     font-weight: 400;
@@ -103,11 +82,9 @@ button:focus {
     margin-bottom: 5px;
 }
 
-.container2 textarea {
+textarea {
     min-width: 200px;
-    max-width: 200px;
     min-height: 60px;
-    max-height: 60px;
     border: none;
     outline: none;
     background: none;
@@ -115,13 +92,14 @@ button:focus {
     border-radius: 10px;
     color: #fff;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
-.container2 textarea:hover {
+textarea:hover {
     border: 1px solid #0f935a;
 }
 
-.container2 textarea:focus {
+textarea:focus {
     border: 1px solid #0f8193;
 }
 
@@ -133,4 +111,91 @@ button:focus {
     margin-top: 30px;
     padding: 8px;
     border-radius: 10px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255,0.02); /* استخدم اللون الذي ترغب فيه */
+    backdrop-filter: blur(3px);
+    min-height: 0vh;
+}
+
+nav .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 29px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 6px;
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+nav ul li a:hover, .active {
+    color: #337bad;
+}
+
+
+.nv {
+    top: 80%;
+    left: -23%;
+    width: 300px;
+    z-index: -1;
+    
+}
+
+.nv .nb {
+    
+    
+    font-size: 10px;
+    color: #081b29;
+    
+}
+
+.nv .vb li a {
+    color: #081b29;
+}
+
+nav ul li .an {
+    color: wheat;
+    
+    
+}
+
+nav ul li .ab {
+    color: wheat;
+    text-align: right;
+    margin: 0 0 0 146px;
+} 
+
+a:hover {
+    transition: .3s;
+}
+
+a {
+    transition: .3s;
+    cursor: pointer;
 }
